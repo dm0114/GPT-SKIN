@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import uploadImageIntoStorage from "../utils/UploadImageIntoStorage";
 import "./popup.css";
 
 // 이미지, 텍스트, 이름 비었을떄 set시 예외처리
@@ -13,28 +14,6 @@ const Popup = () => {
 
   const [isSettings, setIsSettings] = useState(false);
 
-	const encodeImageFileToBase64 = (imageFile, callback) => {
-		const reader = new FileReader();
-		reader.onloadend = () => {
-			callback(reader.result);
-		};
-		reader.readAsDataURL(imageFile);
-	}
-	
-	// 이미지 파일을 선택한 후에 호출되는 함수
-	const handleImageFileSelect = (event) => {
-		const selectedFile = event.target.files[0];
-		console.log(selectedFile)
-		encodeImageFileToBase64(selectedFile, (base64ImageString) => {
-			// 이미지 파일의 Base64 문자열을 Chrome Storage에 저장
-			chrome.storage.local.set({ "imageData": base64ImageString }, () => {
-				console.log(base64ImageString);
-				
-				console.log("Image saved to Chrome Storage");
-			});
-			setImageData(base64ImageString)
-		});
-	}
 
   const setStore = () => {
     chrome.storage.sync.set({
@@ -104,7 +83,7 @@ const Popup = () => {
           id="upload"
           type="file"
           className="hidden"
-          onChange={(event) => handleImageFileSelect(event)}
+          onChange={(event) => uploadImageIntoStorage(event, setImageData)}
         />
       </div>
 
