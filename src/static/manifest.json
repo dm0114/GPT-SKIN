@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
-    "name": "react-boilerplate",
-    "description": "react-boilerplate for chrome extension",
+    "name": "HER",
+    "description": "나만의 작은 GPT",
     "version": "1.0.0",
     "action" : {
         "default_popup": "popup.html",
@@ -15,7 +15,11 @@
         "tabs",
         "bookmarks",
         "storage",
-        "identity"
+        "identity",
+        "scripting", 
+        "activeTab",
+        "webRequest",
+        "webNavigation"
     ],
     "icons": {
         "16" : "icon.png",
@@ -28,8 +32,9 @@
     },
     "content_scripts": [
         {
-            "matches": ["<all_urls>"],
-            "js": ["contentScript.js"]
+            "matches": ["https://chat.openai.com/*"],
+            "js": ["contentScript.js"],
+            "run_at": "document_end"
         }
     ]
 }

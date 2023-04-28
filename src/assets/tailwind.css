@@ -2,7 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-    height: 400px;
-    width: 400px;
-}
+/* #chat-box {
+  background-color: red;
+  color: tomato;
+} */
+
