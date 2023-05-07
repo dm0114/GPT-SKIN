@@ -2,8 +2,52 @@
 @tailwind components;
 @tailwind utilities;
 
-/* #chat-box {
-  background-color: red;
-  color: tomato;
-} */
+.name {
+  width: max-content;
+}
 
+.my-chat {
+  width: max-content;
+}
+
+.chat-box {
+  background: #212121;
+  padding: 16px 24px;
+  margin-top: 32px;
+  border-radius: 10px;
+  margin-right: calc(30px + 1rem);
+}
+
+.chat-box::after {
+  content: "";
+  background: #212121;
+  width: 40px;
+  height: 12px;
+  position: absolute;
+  top: 12px;
+  left: -5px;
+  transform: skewX(45deg)
+}
+
+.my-chat-box {
+  background: #ddd;
+  color: #000 !important;
+  padding: 16px 24px;
+  border-radius: 10px;
+  margin-left: calc(30px + 1rem);
+}
+
+.my-chat-box::after {
+  content: "";
+  background: #ddd;
+  width: 40px;
+  height: 12px;
+  position: absolute;
+  top: 12px;
+  right: -5px;
+  transform: skewX(135deg)
+}
+
+.hidden {
+  display: block;
+}

@@ -6,7 +6,7 @@ const PopupMainUi = ({imageData, name, description, toggle}) => {
   return (
     <div className="flex items-center h-screen w-full justify-center flex-col">
       <div className="photo-wrapper p-2">
-        <ProfileImage imageData={imageData} />
+        <ProfileImage imageData={imageData} width={'w-32'} height={'h-32'}/>
       </div>
       <div className="p-2">
         <h3 className="text-center text-xl text-gray-900 font-medium leading-8">

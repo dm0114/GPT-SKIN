@@ -4,7 +4,7 @@ import PopupButton from "./PopupButton"
 import ProfileImage from "./ProfileImage"
 
 const InputUi = ({title, value, callback}) => {
-  
+
   return (
     <div className="mb-4">
           <label
@@ -33,7 +33,7 @@ const PopupSettingsUi = ({imageData, setImageData, name, setName, description, s
           htmlFor="upload"
           className="flex flex-col items-center gap-2 cursor-pointer"
         >
-          <ProfileImage imageData={imageData} />
+          <ProfileImage imageData={imageData} width={'w-32'} height={'h-32'} />
         </label>
         <input
           id="upload"

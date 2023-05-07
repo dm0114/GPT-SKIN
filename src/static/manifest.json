@@ -1,18 +1,14 @@
 {
     "manifest_version": 3,
     "name": "HER",
-    "description": "나만의 작은 GPT",
-    "version": "1.0.0",
+    "description": "GPT 꾸미기",
+    "version": "0.0.1",
     "action" : {
         "default_popup": "popup.html",
         "default_title": "React Boilerplate",
         "default_icon" : "icon.png"
     },
-    "chrome_url_overrides": {
-        "newtab": "newTab.html"
-    },
     "permissions": [
-        "tabs",
         "bookmarks",
         "storage",
         "identity",
@@ -26,13 +22,12 @@
         "48" : "icon.png",
         "128" : "icon.png"
     },
-    "options_page": "options.html",
     "background": {
         "service_worker": "background.js"
     },
     "content_scripts": [
         {
-            "matches": ["https://chat.openai.com/*"],
+            "matches": ["https://chat.openai.com/c/*"],
             "js": ["contentScript.js"],
             "run_at": "document_end"
         }

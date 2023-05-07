@@ -28,7 +28,7 @@ const useStore = () => {
 			setImageData(
 				res.imageData
 					? res.imageData
-					: "https://www.gravatar.com/avatar/2acfb745ecf9d4dccb3364752d17f65f?s=260&d=mp"
+					: ""
 			);
 		});
 	}, [])

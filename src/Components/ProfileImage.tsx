@@ -1,13 +1,15 @@
 import React from "react";
 
-const ProfileImage = ({ imageData }) => {
+const ProfileImage = ({ imageData, width, height }) => {
+  const imageClassName = `${width} ${height} rounded-full object-cover`;
+
   return (
     <img
       src={imageData}
       alt="Saved Image"
-      className="w-32 h-32 rounded-full object-cover"
+      className={imageClassName}
     />
   );
 };
 
-export default ProfileImage
+export default ProfileImage;
